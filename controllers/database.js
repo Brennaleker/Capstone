@@ -1,9 +1,17 @@
-var Sequelize = require('sequelize');
-var pg = require('pg');
-var config = require('../db_config');
+var Sequelize = require('sequelize'),
+    pg = require('pg'),
+    config = require('../db_config'),
 
-var sequelize = new Sequelize(config.database, config.username, config.password, {
-  host: config.host,
-  port: config.port,
-  dialect: config.dialect
+    sequelize = new Sequelize(config.database, config.username, config.password, {
+    host: config.host,
+    port: config.port,
+    dialect: config.dialect
+  });
+
+sequelize
+.authenticate()
+.then(function(err) {
+  console.log('Connection has been established successfully.');
+}, function (err) {
+  console.log('Unable to connect to the database:', err);
 });
