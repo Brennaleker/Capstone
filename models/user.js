@@ -20,5 +20,3 @@ var User = db.define('user', {
     type: Sequelize.STRING
   }
 })
-
-User.sync();

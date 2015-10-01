@@ -12,10 +12,13 @@ var Organization = db.define('organization', {
     type: Sequelize.STRING
   },
   organization_phone: {
-    type: Seqelize.integer
+    type: Seqelize.INTEGER
   },
   blurb: {
     type: Sequelize.TEXT
+  },
+  population_served: {
+    type: Sequelize.STRING
   },
   shipping_address_1: {
     type: Sequelize.STRING
