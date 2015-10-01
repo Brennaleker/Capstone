@@ -6,7 +6,7 @@ var db = new Sequelize('db', null, null, {
 var Organization = db.define('organization', {
   user_id: {
     references: "Users",
-    referencesKey: "id"
+    referencesKey: "id" 
   },
   organization_name: {
     type: Sequelize.STRING
