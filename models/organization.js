@@ -1,38 +1,22 @@
-var Sequelize = require('sequelize')
-var db = new Sequelize('db', null, null, {
-  dialect: 'postgres'
-})
+var Sequelize = require('sequelize');
+var pg = require('pg').native;
+var database = require('../controllers/database.js');
 
-var Organization = db.define('organization', {
+var Organization = db.sequelize('organizations', {
   user_id: {
     references: "Users",
-    referencesKey: "id" 
+    referencesKey: "id"
   },
-  organization_name: {
-    type: Sequelize.STRING
-  },
-  organization_phone: {
-    type: Seqelize.INTEGER
-  },
-  blurb: {
-    type: Sequelize.TEXT
-  },
-  population_served: {
-    type: Sequelize.STRING
-  },
-  shipping_address_1: {
-    type: Sequelize.STRING
-  },
-  shipping_address_2: {
-    type: Sequelize.STRING
-  },
-  shipping_city: {
-    type: Sequelize.STRING
-  },
-  shipping_state: {
-    type: Sequelize.STRING
-  },
-  shipping_postal_code: {
-    type: Sequelize.STRING
-  }
-})
+  organization_name: Sequelize.STRING,
+  organization_phone: Seqelize.INTEGER,
+  blurb: Sequelize.TEXT,
+  population_served: Sequelize.STRING,
+  shipping_address_1: Sequelize.STRING,
+  shipping_address_2: Sequelize.STRING,
+  shipping_city: Sequelize.STRING,
+  shipping_state: Sequelize.STRING,
+  shipping_postal_code: Sequelize.STRING,
+});
+
+// creates any missing tables based on model definition
+Organizaton.sync();
