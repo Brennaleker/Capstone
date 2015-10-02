@@ -3,10 +3,6 @@ var pg = require('pg').native;
 var database = require('../controllers/database.js');
 
 var Organization = db.sequelize('organizations', {
-  user_id: {
-    references: "Users",
-    referencesKey: "id"
-  },
   organization_name: Sequelize.STRING,
   organization_phone: Seqelize.INTEGER,
   blurb: Sequelize.TEXT,
@@ -17,6 +13,8 @@ var Organization = db.sequelize('organizations', {
   shipping_state: Sequelize.STRING,
   shipping_postal_code: Sequelize.STRING,
 });
+
+Organization.belongsTo(User);
 
 // creates any missing tables based on model definition
 Organizaton.sync();

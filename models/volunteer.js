@@ -11,5 +11,7 @@ var Volunteer = sequelize.define('volunteers', {
   role: Seqelize.STRING
 });
 
+Volunteer.belongsTo(User);
+
 // creates any missing tables based on model definition
 Volunteer.sync();
