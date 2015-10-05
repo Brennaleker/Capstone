@@ -28,5 +28,3 @@ node_modules
 
 #database config information
 db_config.js
-/config
-config/

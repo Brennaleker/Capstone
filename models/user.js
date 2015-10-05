@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var pg = require('pg').native;
+var pg = require('pg');
 var database = require('../controllers/database.js');
 
 var User = sequelize.define('users', {
@@ -10,5 +10,9 @@ var User = sequelize.define('users', {
   last_name: Sequelize.STRING
 });
 
-// creates any missing tables based on model definition
-User.sync();
+User.sync()
+.then(function(err) {
+    console.log('User table synced');
+}).error(function(err) {
+    console.log('User NOT synced sadface'), err;
+});
