@@ -6,8 +6,7 @@ var Sequelize = require('sequelize'),
     host: config.host,
     port: config.port,
     dialect: config.dialect
-  }),
-  User = sequelize.import(../models)
+  });
 
 sequelize
 .authenticate()
