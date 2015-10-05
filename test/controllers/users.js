@@ -1,9 +1,9 @@
 var request = require('supertest'),
     assert = require('assert'),
     app = require('../../app'),
-    sqlite3 = require('sqlite3').verbose(),
+    pg = require('pg'),
     agent = request.agent(app),
-    database = require('../controllers/database.js');,
+    database = require('../../controllers/database.js');
     // user_keys = ['id', 'name', 'registered_at', 'address', 'city', 'state', 'postal_code', 'phone', 'account_credit'];
 
   describe("GET '/customers'", function() {
