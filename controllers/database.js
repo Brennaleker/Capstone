@@ -1,5 +1,4 @@
 var Sequelize = require('sequelize'),
-    // models = require('../models/user.js')
     pg = require('pg'),
     config = require('../db_config'),
 
@@ -48,7 +47,7 @@ Organization.sync()
 // VOLUNTEER TABLE
 var Volunteer = sequelize.define('volunteers', {
   bio: Sequelize.TEXT,
-  role: Sequelize.STRING
+  role: Sequelize.STRING,
 });
 
 Volunteer.belongsTo(User);
