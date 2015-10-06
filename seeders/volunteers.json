@@ -1,0 +1,16 @@
+[
+  {
+      "bio": "I am a teacher at South Elm Elementary.",
+      "role": "project approval"
+  },
+  {
+      "bio": "I like computers and helping people.",
+      "role": "tech support"
+  },
+  {
+      "bio": "I like power and saying 'denied'.",
+      "role": "project approval"
+  }
+]
+
+// psql filename > database

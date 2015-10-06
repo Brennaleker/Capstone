@@ -83,3 +83,5 @@ sequelize
 }, function (err) {
   console.log('Unable to connect to the database:', err);
 });
+
+/// need to export in order to be able to use in models

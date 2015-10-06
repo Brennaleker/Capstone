@@ -1,0 +1,35 @@
+[
+  {
+      "organization_name": "Helping Hands",
+      "organization_phone": "1234567890",
+      "blurb": "We help people, with our hands!",
+      "population_served": "women",
+      "shipping_address_1": "417 S 3rd St.",
+      "shipping_address_2": "",
+      "shipping_city": "Chicago",
+      "shipping_state": "IL",
+      "shipping_postal_code": "12135"
+  },
+  {
+    "organization_name": "Spreading Joy",
+    "organization_phone": "9804327654",
+    "blurb": "Helping those in need.",
+    "population_served": "teens",
+    "shipping_address_1": "1017 45th St. N",
+    "shipping_address_2": "",
+    "shipping_city": "Ithica",
+    "shipping_state": "NY",
+    "shipping_postal_code": "90823"
+  },
+  {
+    "organization_name": "Pay it Forward",
+    "organization_phone": "8974569832",
+    "blurb": "Feeding, clothing and sheltering Chicago's underserved.",
+    "population_served": "all",
+    "shipping_address_1": "878 W Madions Ave.",
+    "shipping_address_2": "Suite B",
+    "shipping_city": "Raleigh",
+    "shipping_state": "NC",
+    "shipping_postal_code": "86734"
+  }
+]
