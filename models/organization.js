@@ -1,5 +1,5 @@
-var Sequelize = require('sequelize');
-var pg = require('pg').native;
+// var Sequelize = require('sequelize');
+// var pg = require('pg').native;
 var database = require('../controllers/database.js');
 
 var Organization = db.sequelize('organizations', {
