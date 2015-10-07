@@ -1,20 +1,28 @@
-var Sequelize = require('sequelize');
-var pg = require('pg').native;
-var database = require('../controllers/database.js');
+// var Sequelize = require('sequelize');
+// var pg = require('pg').native;
+// var database = require('../controllers/database.js');
+"use strict";
 
-var Donor = sequelize.define('donors', {
-  billing_address_1: Sequelize.TEXT,
-  billing_address_2: Sequelize.TEXT,
-  billing_city: Sequelize.TEXT,
-  billing_state: Sequelize.TEXT,
-  billing_zip: Sequelize.INTEGER,
-  phone: Sequelize.INTEGER
-});
+module.exports = function(sequelize, DataTypes) {
+  var Donor = sequelize.define('donors', {
+    billing_address_1: DataTypes.TEXT,
+    billing_address_2: DataTypes.TEXT,
+    billing_city: DataTypes.TEXT,
+    billing_state: DataTypes.TEXT,
+    billing_zip: DataTypes.INTEGER,
+    phone: DataTypes.INTEGER
+  }, {
+    classMethods: {
+      associate: function(models) {
+        Donor.belongsTo(models.User, {
+          onDelete: "CASCADE",
+          foreignKey: {
+            allowull: false
+          }
+        });
+      }
+    }
+  });
 
-Donor.belongsTo(User);
-Donor.sync()
-.then(function(err) {
-    console.log('Donor table synced');
-}).error(function(err) {
-    console.log('Donor NOT synced sadface');
-});
+  return User;
+)};

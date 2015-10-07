@@ -1,17 +1,27 @@
-var Sequelize = require('sequelize');
-var pg = require('pg').native;
-var database = require('../controllers/database.js');
+// var Sequelize = require('sequelize');
+// var pg = require('pg').native;
+// var database = require('../controllers/database.js');
+"use strict";
 
-var Volunteer = sequelize.define('volunteers', {
-  user_id: {
-    references: "Users",
-    referencesKey: "id"
-  },
-  bio: Sequelize.TEXT,
-  role: Seqelize.STRING
-});
+module.exports = function(sequelize, DataTypes) {
+  var Volunteer = sequelize.define('volunteers', {
+    bio: DataTypes.TEXT,
+    role: DataTypes.STRING
+  }, {
+    classMethods: {
+      associate: function(models){
+        Volunteer.belongsTo(models.User, {
+          onDelete: "CASCADE",
+          foreignKey: {
+            allowull: false
+          }
+        });
+      }
+    }
+  });
+  return Volunteer;
+};
 
-Volunteer.belongsTo(User);
 
 // creates any missing tables based on model definition
-Volunteer.sync();
+// Volunteer.sync();
