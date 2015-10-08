@@ -4,7 +4,7 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-  var Donor = sequelize.define('donors', {
+  var Donor = sequelize.define('Donor', {
     billing_address_1: DataTypes.TEXT,
     billing_address_2: DataTypes.TEXT,
     billing_city: DataTypes.TEXT,
@@ -24,5 +24,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  return User;
-)};
+  return Donor;
+};

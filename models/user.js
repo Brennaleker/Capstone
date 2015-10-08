@@ -4,12 +4,12 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define('users', {
-    username: Sequelize.STRING,
-    password: Sequelize.STRING,
-    email: Sequelize.STRING,
-    first_name: Sequelize.STRING,
-    last_name: Sequelize.STRING
+  var User = sequelize.define('User', {
+    username: DataTypes.STRING,
+    password: DataTypes.STRING,
+    email: DataTypes.STRING,
+    first_name: DataTypes.STRING,
+    last_name: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
   });
 
   return User;
-});
+};
 //
 // User.sync()
 // .then(function(err) {

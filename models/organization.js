@@ -4,16 +4,16 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-  var Organization = db.sequelize('organizations', {
-    organization_name: Sequelize.STRING,
-    organization_phone: Seqelize.INTEGER,
-    blurb: Sequelize.TEXT,
-    population_served: Sequelize.STRING,
-    shipping_address_1: Sequelize.STRING,
-    shipping_address_2: Sequelize.STRING,
-    shipping_city: Sequelize.STRING,
-    shipping_state: Sequelize.STRING,
-    shipping_postal_code: Sequelize.STRING,
+  var Organization = sequelize.define('Organization', {
+    organization_name: DataTypes.STRING,
+    organization_phone: DataTypes.INTEGER,
+    blurb: DataTypes.TEXT,
+    population_served: DataTypes.STRING,
+    shipping_address_1: DataTypes.STRING,
+    shipping_address_2: DataTypes.STRING,
+    shipping_city: DataTypes.STRING,
+    shipping_state: DataTypes.STRING,
+    shipping_postal_code: DataTypes.STRING,
   }, {
     classMethods: {
       associate: function(models){

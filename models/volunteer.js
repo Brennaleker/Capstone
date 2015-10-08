@@ -4,7 +4,7 @@
 "use strict";
 
 module.exports = function(sequelize, DataTypes) {
-  var Volunteer = sequelize.define('volunteers', {
+  var Volunteer = sequelize.define('Volunteer', {
     bio: DataTypes.TEXT,
     role: DataTypes.STRING
   }, {
